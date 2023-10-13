@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class MessageSequencer : MonoBehaviour
 {
@@ -8,8 +8,8 @@ public class MessageSequencer : MonoBehaviour
     [SerializeField]
     private string[] _messages = default;
 
-    // _messages ƒtƒB[ƒ‹ƒh‚©‚ç•\¦‚·‚éŒ»İ‚ÌƒƒbƒZ[ƒW‚ÌƒCƒ“ƒfƒbƒNƒXB
-    // ‰½‚àw‚µ‚Ä‚¢‚È‚¢ê‡‚Í -1 ‚Æ‚·‚éB
+    // _messages ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‹ã‚‰è¡¨ç¤ºã™ã‚‹ç¾åœ¨ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚
+    // ä½•ã‚‚æŒ‡ã—ã¦ã„ãªã„å ´åˆã¯ -1 ã¨ã™ã‚‹ã€‚
     private int _currentIndex = -1;
 
     private void Start()
@@ -27,8 +27,8 @@ public class MessageSequencer : MonoBehaviour
     }
 
     /// <summary>
-    /// Ÿ‚Ìƒy[ƒW‚Éi‚ŞB
-    /// Ÿ‚Ìƒy[ƒW‚ª‘¶İ‚µ‚È‚¢ê‡‚Í–³‹‚·‚éB
+    /// æ¬¡ã®ãƒšãƒ¼ã‚¸ã«é€²ã‚€ã€‚
+    /// æ¬¡ã®ãƒšãƒ¼ã‚¸ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯ç„¡è¦–ã™ã‚‹ã€‚
     /// </summary>
     private void MoveNext()
     {

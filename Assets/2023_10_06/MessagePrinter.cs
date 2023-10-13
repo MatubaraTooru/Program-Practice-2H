@@ -1,4 +1,4 @@
-using TMPro;
+ï»¿using TMPro;
 using UnityEngine;
 
 public class MessagePrinter : MonoBehaviour
@@ -12,21 +12,20 @@ public class MessagePrinter : MonoBehaviour
     [SerializeField]
     private float _speed = 1.0F;
 
-    private float _elapsed = 0; // •¶š‚ğ•\¦‚µ‚Ä‚©‚ç‚ÌŒo‰ßŠÔ
-    private float _interval; // •¶š–ˆ‚Ì‘Ò‚¿ŠÔ
+    private float _elapsed = 0; // æ–‡å­—ã‚’è¡¨ç¤ºã—ã¦ã‹ã‚‰ã®çµŒéæ™‚é–“
+    private float _interval; // æ–‡å­—æ¯ã®å¾…ã¡æ™‚é–“
 
-    // _message ƒtƒB[ƒ‹ƒh‚©‚ç•\¦‚·‚éŒ»İ‚Ì•¶šƒCƒ“ƒfƒbƒNƒXB
-    // ‰½‚àw‚µ‚Ä‚¢‚È‚¢ê‡‚Í -1 ‚Æ‚·‚éB
+    // _message ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã‹ã‚‰è¡¨ç¤ºã™ã‚‹ç¾åœ¨ã®æ–‡å­—ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚
+    // ä½•ã‚‚æŒ‡ã—ã¦ã„ãªã„å ´åˆã¯ -1 ã¨ã™ã‚‹ã€‚
     private int _currentIndex = -1;
 
     /// <summary>
-    /// •¶šo—Í’†‚©‚Ç‚¤‚©B
+    /// æ–‡å­—å‡ºåŠ›ä¸­ã‹ã©ã†ã‹ã€‚
     /// </summary>
     public bool IsPrinting
     {
         get
         {
-            // TODO: ‚±‚±‚ÉƒR[ƒh‚ğ‘‚­
             return _currentIndex + 1 < _message.Length;
         }
     }
@@ -50,12 +49,11 @@ public class MessagePrinter : MonoBehaviour
     }
 
     /// <summary>
-    /// w’è‚ÌƒƒbƒZ[ƒW‚ğ•\¦‚·‚éB
+    /// æŒ‡å®šã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
     /// </summary>
-    /// <param name="message">ƒeƒLƒXƒg‚Æ‚µ‚Ä•\¦‚·‚éƒƒbƒZ[ƒWB</param>
+    /// <param name="message">ãƒ†ã‚­ã‚¹ãƒˆã¨ã—ã¦è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€‚</param>
     public void ShowMessage(string message)
     {
-        // TODO: ‚±‚±‚ÉƒR[ƒh‚ğ‘‚­
         if (_textUi is null) { return; }
 
         _textUi.text = "";
@@ -65,11 +63,10 @@ public class MessagePrinter : MonoBehaviour
     }
 
     /// <summary>
-    /// Œ»İÄ¶’†‚Ì•¶šo—Í‚ğÈ—ª‚·‚éB
+    /// ç¾åœ¨å†ç”Ÿä¸­ã®æ–‡å­—å‡ºåŠ›ã‚’çœç•¥ã™ã‚‹ã€‚
     /// </summary>
     public void Skip()
     {
-        // TODO: ‚±‚±‚ÉƒR[ƒh‚ğ‘‚­
         _currentIndex = _message.Length;
         _textUi.text = _message;
     }
