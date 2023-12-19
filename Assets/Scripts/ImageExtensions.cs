@@ -20,11 +20,30 @@ public static class ImageExtensions
         return FadeAsync(image, from, to, duration);
     }
 
+    public static IEnumerator FadeOutAsync(this Image image, float duration)
+    {
+        var from = image.color;
+        from.a = 1;
+        
+        var to = image.color;
+        to.a = 0;
+        return FadeAsync(image, from, to, duration);
+    }
+
     public static IEnumerator FadeAsync(Image image, Color from, Color to, float duration)
     {
         for (var t = 0F; t < duration; t += Time.deltaTime)
         {
             image.color = Color.Lerp(from, to, t / duration);
+            yield return null;
+        }
+    }
+
+    public static IEnumerator MoveAsync(this RectTransform rectTransform, Vector2 from, Vector2 to, float duration)
+    {
+        for (var t = 0f; t < duration; t += Time.deltaTime)
+        {
+            rectTransform.anchoredPosition = Vector2.Lerp(from, to, t / duration);
             yield return null;
         }
     }
