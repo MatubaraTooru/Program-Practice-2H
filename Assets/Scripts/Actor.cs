@@ -19,10 +19,22 @@ public class Actor : MonoBehaviour
     [SerializeField]
     private Sprite[] _sprites = null; // 表情差分一覧
 
+    [SerializeField]
+    private RectTransform _rectTransform;
+
+    [SerializeField]
+    private float _fadeTime = 2;
+
+    [SerializeField]
+    private float _moveTime = 2;
+
+    [SerializeField]
+    private float _faceFadeTime = 2;
+
     private void Start()
     {
-        //StartCoroutine(ShowAsync(_foreImage, 2));
-        //StartCoroutine(MoveAsync(_foreImage, 2));
+        StartCoroutine(ShowAsync(_foreImage, _fadeTime));
+        StartCoroutine(MoveAsync(_rectTransform, _moveTime));
         StartCoroutine(Test());
     }
 
@@ -30,7 +42,7 @@ public class Actor : MonoBehaviour
     {
         for (int i = 0; i < _sprites.Length; i++)
         {
-            yield return SetImageAsync(i, 2);
+            yield return SetImageAsync(i, _faceFadeTime);
         }
     }
 
@@ -56,9 +68,9 @@ public class Actor : MonoBehaviour
         yield return image.FadeOutAsync(duration);
     }
 
-    public IEnumerator MoveAsync(Image image, float duration)
+    public IEnumerator MoveAsync(RectTransform rectTransform, float duration)
     {
-        yield return image.GetComponent<RectTransform>().MoveAsync(_fromPos, _toPos, duration);
+        yield return rectTransform.MoveAsync(_fromPos, _rectTransform.position, duration);
     }
 
     

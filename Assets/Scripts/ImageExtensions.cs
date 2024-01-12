@@ -5,7 +5,7 @@ using UnityEngine;
 public static class ImageExtensions
 {
     /// <summary>
-    /// 第一引数をthisキーワードで修飾して拡張メソッドにする
+    /// 第一引数を this キーワードで修飾して拡張メソッドにする
     /// </summary>
     /// <param name="image"></param>
     /// <param name="duration"></param>
@@ -43,7 +43,7 @@ public static class ImageExtensions
     {
         for (var t = 0f; t < duration; t += Time.deltaTime)
         {
-            rectTransform.anchoredPosition = Vector2.Lerp(from, to, t / duration);
+            rectTransform.position = Vector2.Lerp(from, to, t / duration);
             yield return null;
         }
     }
